@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  font-family: Verdana, sans-serif;
+  background-color: rgb(27, 29, 38);
+  color: white;
+  font-size: 32px;
+}
+
+.backdrop {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.spinner {
+  width: 1em;
+  height: 1em;
+  border: 5px solid rgba($color: #ffffff, $alpha: 0.3);
+  border-bottom-color: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}

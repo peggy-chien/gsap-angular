@@ -1,0 +1,8 @@
+<button class="btn login-btn" (click)="procceed()">
+  <ng-container *ngIf="loggingIn; else displayText">
+    <div class="spinner"></div>
+  </ng-container>
+  <ng-template #displayText>
+    Login
+  </ng-template>
+</button>

@@ -1,0 +1,161 @@
+:host {
+  width: 100%;
+  overflow-x: hidden;
+
+  app-navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: end;
+  }
+
+  .main-frame {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    position: relative;
+    height: 100%;
+
+    h1, h5 {
+      display: flex;
+      justify-content: center;
+      margin: 1rem auto;
+    }
+  
+    #title {
+      margin-top: 40vh;
+      align-self: start;
+    }
+  
+    #subtitle {
+      align-self: start;
+    }
+  }
+
+  .flower {
+    position: absolute;
+    width: 8.25rem;
+    height: 8.25rem;
+    transform: rotate(45deg);
+    transition-duration: 500ms;
+    transition-property: transform;
+    top: 28vh;
+    left: 27vw;
+    z-index: 1;
+
+    &:hover {
+      transform: rotate(112.5deg);
+    }
+
+    .petal {
+      width: 5rem;
+      height: 5rem;
+      background-color: white;
+      border-radius: 50%;
+      position: absolute;
+
+      &:nth-child(1) {
+        top: 0;
+        left: 0;
+      }
+
+      &:nth-child(2) {
+        top: 0;
+        right: 0;
+      }
+
+      &:nth-child(3) {
+        bottom: 0;
+        right: 0;
+      }
+
+      &:nth-child(4) {
+        bottom: 0;
+        left: 0;
+      }
+    }
+
+    .pistil {
+      width: 3rem;
+      height: 3rem;
+      position: absolute;
+      top: 2.625rem;
+      left: 2.625rem;
+      border-radius: 50%;
+      background-color: rgb(27, 29, 38);
+    }
+  }
+
+  .flower-2 {
+    position: relative;
+    bottom: -30vh;
+    right: -145vw;
+    transform: scale(2);
+
+    .petal {
+      width: 1rem;
+      position: absolute;
+      display: grid;
+      grid-template-areas:
+        'upleft upright'
+        'downleft downright';
+
+      &-1 {
+        grid-area: upleft;
+        width: .5rem;
+        height: 5rem;
+        border-radius: 100% 0 0 0;
+        background-color: white;
+      }
+
+      &-2 {
+        grid-area: upright;
+        width: .5rem;
+        height: 5rem;
+        border-radius: 0 100% 0 0;
+        background-color: white;
+      }
+
+      &-3 {
+        grid-area: downright;
+        width: .5rem;
+        height: 5rem;
+        border-radius: 0 0 100% 0;
+        background-color: white;
+      }
+
+      &-4 {
+        grid-area: downleft;
+        width: .5rem;
+        height: 5rem;
+        border-radius: 0 0 0 100%;
+        background-color: white;
+      }
+
+      $n: 30;
+      @for $i from 1 through $n {
+        &:nth-child(#{$i}) {
+          transform: rotate(12deg * $i);
+          transform-origin: calc(50% - .5rem) 100%;
+        }
+      }
+    }
+  }
+
+  .box {
+    border-radius: 25%;
+    width: 25px;
+    height: 25px;
+  }
+
+  #green {
+    background-color: rgb(148, 255, 164);
+  }
+  #blue {
+    background-color: rgb(86, 158, 241);
+  }
+  #green {
+    background-color: rgb(255, 185, 127);
+  }
+}
